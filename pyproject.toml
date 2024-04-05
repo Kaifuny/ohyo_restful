@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "ohyo"
+version = "0.1.0"
+description = ""
+authors = ["Kaifuny"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [
+    { include = "ohyo_restful", from = "./packages" },
+    { include = "ohyo_system", from = "./packages" }
+]
+
+[tool.poetry.scripts]
+start-restful = "ohyo_restful:run"
+start-system = "ohyo_system:run"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.0.2"
+flask-sqlalchemy = "^3.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
